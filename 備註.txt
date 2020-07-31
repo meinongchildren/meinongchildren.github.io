@@ -1,0 +1,4 @@
+1. 背景來源均來自https://www.pexels.com/zh-tw/此網站。
+2. 使用bootstrap4 來做網頁特效與響應式設計。
+3. 使用jQuery來操作網頁元素。
+4. gallery部分的彈幕使用lightbox，參考:https://leahlin912.github.io/2019/04/04/bootstrap-%E4%BD%BF%E7%94%A8Lightbox%E5%BD%B1%E5%83%8F%E7%87%88%E7%AE%B1/

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大專生洄游農村計畫
+    </title>
+    <link rel="shortcut icon" href="image/logo/favicon.png" />
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/gallery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/specimen/Noto+Serif+TC -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- .navbar-brand 左上LOGO位置 -->
+        <a class="navbar-brand " style="color: rgb(24, 38, 51);">
+            <span class="h4 mx-1">大專生洄游農村計畫</span>
+        </a>
+        <!-- .navbar-toggler 漢堡式選單按鈕 -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- .navbar-toggler-icon 漢堡式選單Icon -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- .collapse.navbar-collapse 用於外層中斷點群組和隱藏導覽列內容 -->
+        <!-- 選單項目&漢堡式折疊選單 -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!-- active表示當前頁面 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="gallery.html">圖片</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+            <source src="video/background_video.MOV" type="video/mp4">
+        </video>
+    </div>
+    <div class="container py-5">
+        <header class="text-center">
+            <h1>美濃風光．農村印象</h1>
+            <p class=" mb-0">農村的活動照片與小繪本</p>
+            <p class="">攝影與製作
+                <a href="https://bootstrapious.com" class="text-white">
+                    <u>Amber</u>
+                </a>
+            </p>
+        </header>
+        <div class="container button_select">
+            <div class="row">
+                <div class="col text-center">
+                    <!-- <button type="button" class="btn btn-outline-dark" onclick="loadIMG()">生活紀錄</button> -->
+                    <button type="button" class="btn btn-outline-dark" onclick="loadPage('0', 3)">手製繪本</button>
+                    <div class="btn-group" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            生活紀錄
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <button type="button" class="dropdown-item" onclick="loadPage('7', 44)">餐桌</button>
+                            <button type="button" class="dropdown-item" onclick="loadPage('8', 7)">秧光市集(街區篇)</button>
+                            <!-- <button type="button" class="dropdown-item" onclick="loadPage('9', 0)">九月</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Page" class="row">
+        </div>
+</body>
+<script type="text/javascript">
+function ItemStrPage(Month, TotalImg) {
+    StartStr = '\
+        <div class="separator my-2"></div>\
+        <div class="row my-5">';
+
+    ProcessingStr = '';
+    for (i = 1; i <= TotalImg; i++) {
+        ProcessingStr += '\
+            <div class="col-lg-4">\
+                <figure class="rounded caption-1">\
+                    <a href="image/gallery/' + Month + '/(' + i + ').jpg" data-toggle="lightbox" data-gallery="gallery">\
+                        <img src="image/gallery/' + Month + '/(' + i + ').jpg" alt="" class="w-100 card-img-top border border-dark border-mb">\
+                    </a>\
+                </figure>\
+            </div>\
+            ';
+    }
+
+
+    EndStr = '\
+        </div>';
+    return StartStr + ProcessingStr + EndStr
+}
+
+function ItemStrPageV2(Month, TotalImg) {
+    StartStr = '\
+        <div class="container-fluid">\
+        <div class="separator my-2"></div>\
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">\
+            <div class="carousel-inner rounded border border-dark">';
+
+    ProcessingStr = '';
+    for (i = 1; i <= TotalImg; i++) {
+        if (i == 1) {
+            ProcessingStr += '\
+                <div class="carousel-item active">\
+                    <img class="d-block w-100" src="image/gallery/' + Month + '/(' + i + ').jpg" >\
+                    <div class="carousel-caption d-none d-md-block">\
+                        <h5>Second</h5>\
+                        <p>...</p>\
+                    </div>\
+                </div>\
+                ';
+        } else {
+            ProcessingStr += '\
+                <div class="carousel-item ">\
+                    <img class="d-block w-100" src="image/gallery/' + Month + '/(' + i + ').jpg" >\
+                    <div class="carousel-caption d-none d-md-block">\
+                        <h5>Second</h5>\
+                        <p>...</p>\
+                    </div>\
+                </div>\
+                ';
+        }
+
+    }
+
+    EndStr = '\
+                </div>\
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">\
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+                    <span class="sr-only">Previous</span>\
+                </a>\
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">\
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+                    <span class="sr-only">Next</span>\
+                </a>\
+            </div>\
+        </div>';
+    return StartStr + ProcessingStr + EndStr
+}
+
+function loadPage(Month, TotalImg) {
+    Str = '';
+    if (Month == 0) {
+        Str = ItemStrPageV2(Month, TotalImg);
+    } else {
+        Str = ItemStrPage(Month, TotalImg);
+    }
+    document.getElementById("Page").innerHTML = Str;
+
+    // var l = document.getElementById("life_log");
+    // l.style.display = "none";
+
+    // var p = document.getElementById("picture_book");
+    // p.style.display = "none";  
+
+    var page = document.getElementById("Page");
+    page.style.display = "block";
+}
+</script>
+
+</html>

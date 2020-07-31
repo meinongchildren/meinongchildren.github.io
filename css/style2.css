@@ -1,0 +1,168 @@
+body{
+
+  font-family: 'Noto Serif TC', serif;
+
+}
+/*============= navbar =====================*/
+.navbar {
+    background: rgba(0, 0, 0, 0.6);
+  }
+.navbar-brand img{
+    height: 2em;
+}
+.navbar-brand span{
+  font-weight: 800;
+}
+
+/*============= navbar =====================*/
+
+
+.caption{
+    position: absolute;
+    top :38%;
+    width: 100%;
+    color: white;
+    font-family: 'Noto Serif TC', serif;
+  }
+.main{
+    padding-bottom: 25rem;
+}
+.caption h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing:  .2rem;
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem;
+}
+  
+.caption h5{
+  font-size: 1.3rem;
+  text-shadow: .1rem .1rem .5rem black;  
+  padding-bottom: 1.1rem;
+  letter-spacing:  .9rem;
+}
+
+/*============= 活動介紹 =====================*/
+.month_content{
+  padding :5% 15%;
+}
+
+.subcaption h5{
+  font-size: 1.2rem;
+  letter-spacing:  .2rem;
+}
+/*============= 活動介紹 =====================*/
+
+.btn-lg{
+  border-width: medium;
+  border-radius: 0;
+  font-size: 1.1rem;
+  padding : .6rem 1.3rem;
+}
+
+.accordion button{
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: aliceblue;
+  background-color: transparent;
+}
+
+.accordion button:hover{
+  border: transparent;
+  font-weight: 900;
+}
+/*============= 背景影片 =====================*/
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+  opacity:0.8;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+  }
+/*============= 背景影片 =====================*/
+
+@media (min-width: 994px) {
+  .sizer {
+    margin: 20%;
+  } 
+  .card img{
+    max-height: 25vw;
+  }
+}
+
+/*============= 網頁尾端 =====================*/
+footer{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+footer a{
+  color: wheat;
+}
+
+/*============= 網頁尾端 =====================*/
+
+/*============= COURSE SECTION =============*/
+
+.col-md-8, .col-md-6{
+    margin: 2rem auto 8rem;
+    padding-top: 2rem;
+  }
+  .col-md-8 h1, .col-md-6 h1{
+      font-size: 2.4rem;
+    }
+  .col-mb-6 a{
+    font-size: 2.4rem;
+  }
+  .btn-secondary {
+    border-width: medium;
+    border-radius: 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    border-color: #1EBBA3;
+    background-color: #1EBBA3;
+    color: white;
+  }
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    border-color: #189582;
+    background-color: #189582;
+    color: white;
+  }
+
+
+  /*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
